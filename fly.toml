@@ -1,22 +1,16 @@
-# fly.toml app configuration file generated for drumma-fm-wispy-darkness-4116 on 2025-04-01T12:44:49-03:00
-#
-# See https://fly.io/docs/reference/configuration/ for information about how to use this file.
-#
-
-app = 'drumma-fm-wispy-darkness-4116'
-primary_region = 'scl'
-
-[build]
+app = "drumma-fm-wispy-darkness-4116"
+build = { }
+primary_region = "scl"
 
 [http_service]
-  internal_port = 3000
-  force_https = true
-  auto_stop_machines = 'stop'
-  auto_start_machines = true
-  min_machines_running = 0
-  processes = ['app']
+auto_start_machines = true
+auto_stop_machines = false
+force_https = true
+internal_port = 3_000
+min_machines_running = 1
+processes = [ "app" ]
 
 [[vm]]
-  memory = '1gb'
-  cpu_kind = 'shared'
-  cpus = 1
+cpu_kind = "shared"
+cpus = 1
+memory = "1gb"
